@@ -10,8 +10,7 @@ let ulEl = document.getElementById("ul-el")
 
 
 //Declare an array to store the data from localStorage
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-console.log(leadsFromLocalStorage)
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 //Check if the localStorage is empety or not
 if (leadsFromLocalStorage) {
@@ -22,21 +21,17 @@ if (leadsFromLocalStorage) {
 // Add a click event to the "SAVE" button
 inputBtn.addEventListener("click", function(){
     // Check if the input field is empty
-    if(inputEl.value===""){
-        console.log("empety")
+    if(inputEl.value===""){
     }
     else{
         // Add the value of the input field to our links array
-        myLeads.push(inputEl.value) 
-        console.log(myLeads)
+        myLeads.push(inputEl.value) 
         // Clear the input field
         inputEl.value = ""
         //save value into the local data
         localStorage.setItem("myLeads", JSON.stringify(myLeads) )
         // Render the updated links list
         render(myLeads)
-
-        console.log( localStorage.getItem("myLeads") )
     }
 })
 
@@ -55,8 +50,7 @@ inputBtn2.addEventListener("click", function(){
     if (myLeads.length > 0) {
         // Remove the last element from the links array and the local storage
         myLeads.pop()
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        console.log(myLeads)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
         // Render the updated links list
         render(myLeads)
     } else {
